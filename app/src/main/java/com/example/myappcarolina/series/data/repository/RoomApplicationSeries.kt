@@ -2,34 +2,18 @@ package com.example.myappcarolina.series.data.repository
 
 import android.content.Context
 import androidx.room.Room
-import com.example.myappcarolina.movies.data.MoviesDatabase
 
 class RoomApplicationSeries {
-    var databaseMovies: MoviesDatabase? = null
+    var databaseSeries: SeriesDatabase? = null
 
-/*
-    fun create(context: Context): MoviesDatabase {
-        return Room.databaseBuilder(context, MoviesDatabase::class.java,
-            "MoviesDb").build()
-    }*/
 
-    fun getMoviesDatabase(context: Context): MoviesDatabase {
-        var dbmovies = databaseMovies
-        if(dbmovies==null){
-            dbmovies = Room.databaseBuilder(context, MoviesDatabase::class.java,
-                "MoviesDb").build()
+    fun getSeriesDatabase(context: Context): SeriesDatabase {
+        var dbseries = databaseSeries
+        if(dbseries==null){
+            dbseries = Room.databaseBuilder(context, SeriesDatabase::class.java,
+                "SeriesDb").build()
         }
-        return dbmovies
+        return dbseries
     }
 
-    /*companion object{
-        var databaseMovies: MoviesDatabase? = null
-    }
-
-    override fun onCreate() {
-        Log.e("OnCrete!!!", "creando room")
-        super.onCreate()
-         databaseMovies = Room.databaseBuilder(applicationContext, MoviesDatabase::class.java,
-        "MoviesDb").build()
-    }*/
 }

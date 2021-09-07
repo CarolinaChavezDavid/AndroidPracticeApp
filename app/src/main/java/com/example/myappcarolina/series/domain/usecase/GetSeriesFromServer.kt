@@ -5,10 +5,9 @@ import androidx.lifecycle.LiveData
 import com.example.myappcarolina.series.data.repository.SeriesRepository
 import com.example.myappcarolina.series.domain.model.SeriesDto
 
-class GetSeriesUsedCase {
+class GetSeriesFromServer {
     var seriesRepository = SeriesRepository()
-
-    fun invoke(context: Context): LiveData<List<SeriesDto>> {
-        return seriesRepository.getSeries(context)
+    fun invokeService(context: Context): LiveData<List<SeriesDto>> {
+        return seriesRepository.getSeriesFromServer(context)
     }
 }

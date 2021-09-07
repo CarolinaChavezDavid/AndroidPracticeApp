@@ -27,9 +27,8 @@ class SeriesAdapter(var context: Context?  = null, var serieList : List<SeriesDt
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val serie = this.serieList[position]
-
-        var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        var gridView =  inflator.inflate(R.layout.item_card, null)
+        val inflater = LayoutInflater.from(context)
+        val gridView =  inflater.inflate(R.layout.item_series, null)
         Glide.with(context!!)
             .load(serie.poster)
             .fitCenter()

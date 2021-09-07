@@ -7,5 +7,4 @@ import com.example.myappcarolina.series.domain.model.SeriesDto
 @Database(entities = [SeriesDto::class], version = 1, exportSchema = true)
 abstract class SeriesDatabase :RoomDatabase() {
     abstract fun serieDao():SerieDao
-
 }
